@@ -27,18 +27,18 @@ function NavigationRail() {
       >
         <span className="material-symbols-outlined">home</span>
       </md-filled-tonal-button>
-      <div className="flex flex-col align-middle gap-10 mt-8">
+      <div className="flex flex-col align-middle gap-5 mt-8">
         {navItems.map((item) => (
           <div key={item.label} className="flex flex-col items-center gap-1">
             <div
               onClick={() =>
                 isSelected === true ? setIsSelected(true) : setIsSelected(false)
               }
-              className={` rounded-[16px] cursor-pointer  hover:bg-purple-200 w-[56px] h-[32px] flex items-center justify-center ${
+              className={` rounded-[16px] cursor-pointer group hover:bg-purple-200 w-[56px] h-[32px] flex items-center justify-center ${
                 isSelected && "bg-purple-300"
               }`}
             >
-              <span className="material-symbols-outlined  text-[24px]">
+              <span className="material-symbols-outlined text-[24px] group-hover:font-extrabold">
                 {item.icon}
               </span>
             </div>
