@@ -1,5 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  heme: {
+    extend: {
+      fontFamily: {
+        material: ['"Material Symbols Outlined"'],
+      },
+    },
+  },
   content: ["./index.html", "./src/**/*.{html,js,jsx,ts,tsx}"],
   mode: "jit",
   purge: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],

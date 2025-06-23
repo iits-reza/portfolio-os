@@ -1,1 +1,23 @@
 @import "tailwindcss";
+@import "@material-design-icons/font/filled.css";
+@import "@material-design-icons/font/outlined.css";
+@import "material-symbols";
+
+@layer base {
+  .material-symbols,
+  .material-symbols-outlined,
+  .material-symbols-rounded,
+  .material-symbols-sharp {
+    font-family: "Material Symbols", "Material Symbols Outlined",
+      "Material Symbols Rounded", "Material Symbols Sharp";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px; /* Or 20/48 depending on your size */
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    direction: ltr;
+  }
+}

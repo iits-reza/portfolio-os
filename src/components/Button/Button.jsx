@@ -1,9 +1,10 @@
+// Button.js (JavaScript version)
 "use client";
 
-import { VariantProps, cva } from "class-variance-authority";
-import cx from "classnames";
 import { forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
+import cx from "classnames";
+import { cva } from "class-variance-authority";
 
 const variants = cva(
   [
@@ -27,38 +28,44 @@ const variants = cva(
       },
     },
     defaultVariants: {
-      variant: "primary",
+      variant: "navButton",
       size: "default",
     },
   }
 );
 
-const Button = forwardRef((props, ref) => {
-  const { className, children, variant, size, ...rest } = props;
+const Button = forwardRef(
+  (
+    { className, icon, label, isSelected, onClick, variant, size, ...rest },
+    ref
+  ) => {
+    return (
+      <button
+        ref={ref}
+        onClick={onClick}
+        className={twMerge(
+          cx(
+            "flex flex-col items-center gap-1",
+            variants({ variant, size, className })
+          )
+        )}
+        {...rest}
+      >
+        <div
+          className={twMerge(
+            "rounded-[16px] cursor-pointer w-[56px] h-[32px] flex items-center justify-center transition-colors",
+            isSelected ? "bg-purple-300" : "hover:bg-purple-200"
+          )}
+        >
+          <span className="material-symbols-outlined text-[24px] group-hover:font-extrabold">
+            {icon}
+          </span>
+        </div>
+        <span className="text-sm">{label}</span>
+      </button>
+    );
+  }
+);
 
-  <button
-    ref={ref}
-    key={item.label}
-    className="flex flex-col items-center gap-1"
-    className={twMerge(cx(variants({ variant, size, className })))}
-    {...rest}
-  >
-    <div
-      onClick={() =>
-        isSelected === true ? setIsSelected(true) : setIsSelected(false)
-      }
-      className={` rounded-[16px] cursor-pointer group hover:bg-purple-200 w-[56px] h-[32px] flex items-center justify-center ${
-        isSelected && "bg-purple-300"
-      }`}
-    >
-      <span className="material-symbols-outlined text-[24px] group-hover:font-extrabold">
-        {item.icon}
-      </span>
-    </div>
-    <span className="text-sm">{item.label}</span>
-    {children}
-  </button>;
-});
 Button.displayName = "Button";
-
 export { Button };
