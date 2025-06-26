@@ -2,6 +2,7 @@ import "@material/web/button/filled-tonal-button.js";
 import "@material/web/button/text-button.js";
 import { MdRipple } from "@material/web/ripple/ripple.js";
 import React, { useEffect, useRef } from "react";
+import "./NavigationRail.css";
 
 const navItems = [
   { label: "Projects", icon: "interests" },
@@ -21,7 +22,7 @@ function NavigationRail() {
   }, []);
 
   return (
-    <nav className="flex flex-col fixed top-0 left-0 bg-[#F7F2FA] h-full p-4 ">
+    <nav className="flex flex-col fixed top-0 left-0 bg-[#F7F2FA] h-full p-4">
       <div>
         <md-filled-tonal-button
           style={{
