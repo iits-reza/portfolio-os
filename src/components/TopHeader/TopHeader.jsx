@@ -1,5 +1,6 @@
 import React from "react";
 import "./TopHeader.css";
+import TechIllustration from "../../assets/technology.png";
 
 function TopHeader() {
   return (
@@ -9,11 +10,15 @@ function TopHeader() {
         <br />
         <span className="rotate-[-45deg]">I'm Reza</span>
       </div>
-      <div className="banner text-8xl p-9 text-white bg-linear-to-r from-indigo-200 to-blue-200 h-[400px] w-3/4 rounded-4xl">
+      <div className="banner  relative text-8xl p-9 text-white bg-linear-to-r from-indigo-200 to-blue-200 h-[400px] w-3/4 rounded-4xl">
+        <img
+          src={TechIllustration}
+          className="absolute right-[10%] top-[8%] w-[300px] invert"
+        />
         A
-        <div />
+        <br />
         Frontend
-        <div />
+        <br />
         &lt;Developer/ &gt;
       </div>
     </header>
