@@ -5,7 +5,7 @@ import TopHeader from "./components/TopHeader/TopHeader";
 
 function App() {
   return (
-    <div className="flex flex-row items-stretch">
+    <div className="">
       <NavigationRail />
       <div className="flex flex-col">
         <TopHeader />

@@ -22,7 +22,7 @@ function NavigationRail() {
   }, []);
 
   return (
-    <nav className="flex flex-col bg-[#F7F2FA] h-screen p-4 w-[100px]">
+    <nav className="flex flex-col bg-[#F7F2FA] h-screen p-4 w-[100px] float-left">
       <div>
         <md-filled-tonal-button
           style={{
