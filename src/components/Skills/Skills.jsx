@@ -21,6 +21,7 @@ const skills = [
     shape: "square",
     background: "bg-yellow-300",
     color: "text-black",
+    size: 100,
   },
   {
     skill: "Bootstrap",
@@ -90,7 +91,7 @@ const skills = [
 function Skills() {
   return (
     <div className="grid grid-cols-5 gap-4">
-      {skills.map(({ skill, icon: Icon, shape, background, color }) => (
+      {skills.map(({ skill, icon: Icon, shape, background, color, size }) => (
         <div
           key={skill}
           className={`w-52 h-52  flex items-center justify-center ${background}`}
@@ -103,7 +104,7 @@ function Skills() {
             maskSize: "cover",
           }}
         >
-          <Icon className={`${color}`} size={64} />
+          <Icon className={`${color}`} size={size ? size : 94} />
         </div>
       ))}
     </div>
