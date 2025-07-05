@@ -5,7 +5,7 @@ import TopHeader from "./components/TopHeader/TopHeader";
 
 function App() {
   return (
-    <div className="">
+    <div className="relative">
       <NavigationRail />
       <div className="flex flex-col">
         <TopHeader />
