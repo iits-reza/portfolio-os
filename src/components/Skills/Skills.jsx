@@ -90,23 +90,25 @@ const skills = [
 
 function Skills() {
   return (
-    <div className="grid grid-cols-5 gap-4">
-      {skills.map(({ skill, icon: Icon, shape, background, color, size }) => (
-        <div
-          key={skill}
-          className={`w-52 h-52  flex items-center justify-center ${background}`}
-          style={{
-            WebkitMaskImage: `url(/shapes/${shape}.svg)`,
-            maskImage: `url(/shapes/${shape}.svg)`,
-            WebkitMaskRepeat: "no-repeat",
-            maskRepeat: "no-repeat",
-            WebkitMaskSize: "cover",
-            maskSize: "cover",
-          }}
-        >
-          <Icon className={`${color}`} size={size ? size : 94} />
-        </div>
-      ))}
+    <div className=" h-screen place-items-center items-center content-center">
+      <div className="grid grid-cols-5 gap-4">
+        {skills.map(({ skill, icon: Icon, shape, background, color, size }) => (
+          <div
+            key={skill}
+            className={`w-52 h-52 flex items-center justify-center ${background}`}
+            style={{
+              WebkitMaskImage: `url(/shapes/${shape}.svg)`,
+              maskImage: `url(/shapes/${shape}.svg)`,
+              WebkitMaskRepeat: "no-repeat",
+              maskRepeat: "no-repeat",
+              WebkitMaskSize: "cover",
+              maskSize: "cover",
+            }}
+          >
+            <Icon className={`${color}`} size={size ? size : 94} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
