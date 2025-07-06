@@ -13,6 +13,7 @@ import { TbSql } from "react-icons/tb";
 import { GiPenguin } from "react-icons/gi";
 import { FaLinux } from "react-icons/fa";
 import { FcLinux } from "react-icons/fc";
+import { CardItem } from "../CardItem/CardItem";
 
 const skills = [
   {
