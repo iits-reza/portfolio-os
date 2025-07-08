@@ -2,10 +2,14 @@ import { MdOutlinePhone, MdAlternateEmail } from "react-icons/md";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const infos = [
-  { icon: MdOutlinePhone, value: "10100100110" },
-  { icon: MdAlternateEmail, value: "example@inlook.com" },
-  { icon: FaLinkedin, value: "me#linkin" },
-  { icon: FaGithub, value: "github" },
+  {
+    icon: MdAlternateEmail,
+    label: "example@inlook.com",
+    link: "",
+    type: "email",
+  },
+  { icon: FaLinkedin, label: "me#linkin", link: "" },
+  { icon: FaGithub, label: "github", link: "" },
 ];
 
 function ContactInfo() {
@@ -36,26 +40,44 @@ function ContactInfo() {
 
         {/* Contact Items */}
         <div className="flex flex-col gap-6">
-          {infos.map(({ icon: Icon, value }, idx) => (
+          <div className="flex items-center gap-4 p-4 rounded-3xl bg-indigo-300">
             <div
-              key={idx}
-              className="flex items-center gap-4 p-4 rounded-3xl bg-indigo-300"
+              className="bg-indigo-500 h-12 w-12 grid place-items-center"
+              style={{
+                WebkitMaskImage: "url(/shapes/seven-sided-cookie.svg)",
+                maskImage: "url(/shapes/seven-sided-cookie.svg)",
+                WebkitMaskRepeat: "no-repeat",
+                maskRepeat: "no-repeat",
+                WebkitMaskSize: "cover",
+                maskSize: "cover",
+              }}
             >
-              <div
-                className="bg-indigo-500 h-12 w-12 grid place-items-center"
-                style={{
-                  WebkitMaskImage: "url(/shapes/seven-sided-cookie.svg)",
-                  maskImage: "url(/shapes/seven-sided-cookie.svg)",
-                  WebkitMaskRepeat: "no-repeat",
-                  maskRepeat: "no-repeat",
-                  WebkitMaskSize: "cover",
-                  maskSize: "cover",
-                }}
-              >
-                <Icon size={24} className="text-white" />
-              </div>
-              <div className="text-white text-lg font-medium">{value}</div>
+              <MdOutlinePhone size={24} className="text-white" />
             </div>
+            <div className="text-white text-lg font-medium">22070978789</div>
+          </div>
+          {infos.map(({ icon: Icon, label }, idx) => (
+            <Link to>
+              <div
+                key={idx}
+                className="flex items-center gap-4 p-4 rounded-3xl bg-indigo-300"
+              >
+                <div
+                  className="bg-indigo-500 h-12 w-12 grid place-items-center"
+                  style={{
+                    WebkitMaskImage: "url(/shapes/seven-sided-cookie.svg)",
+                    maskImage: "url(/shapes/seven-sided-cookie.svg)",
+                    WebkitMaskRepeat: "no-repeat",
+                    maskRepeat: "no-repeat",
+                    WebkitMaskSize: "cover",
+                    maskSize: "cover",
+                  }}
+                >
+                  <Icon size={24} className="text-white" />
+                </div>
+                <div className="text-white text-lg font-medium">{label}</div>
+              </div>
+            </link>
           ))}
         </div>
       </div>
