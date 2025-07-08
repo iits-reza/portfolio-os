@@ -3,8 +3,11 @@ import "@material/web/button/text-button.js";
 import { MdRipple } from "@material/web/ripple/ripple.js";
 import React, { useEffect, useRef } from "react";
 import "./NavigationRail.css";
+import { Button } from "../Button/Button.jsx";
+import { MdOutlineAddHome, MdOutlineHome } from "react-icons/md";
 
 const navItems = [
+  { label: "Home", icon: "home" },
   { label: "Projects", icon: "interests" },
   { label: "Skills", icon: "code" },
   { label: "About me", icon: "account_circle" },
@@ -22,23 +25,8 @@ function NavigationRail() {
   }, []);
 
   return (
-    <nav className="flex flex-col bg-[#F7F2FA] h-screen sticky left-0 top-0 z-50 p-4 w-[100px] float-left">
+    <nav className="flex flex-col bg-indigo-100 h-screen sticky left-0 top-0 z-50 p-4 w-[100px] float-left">
       <div>
-        <md-filled-tonal-button
-          style={{
-            backgroundColor: "#6e5586", // Your purple color or M3 token
-            borderRadius: "12px",
-            padding: 10,
-            width: 60,
-            height: 60,
-            display: "flex",
-            flex: "column",
-            justifyContent: "center",
-            alignContent: "center",
-          }}
-        >
-          <span className="material-symbols-outlined">home</span>
-        </md-filled-tonal-button>
         {/* // todo : button anitmation */}
         <div className="flex flex-col align-middle gap-5 mt-8">
           {navItems.map((item, index) => {
@@ -54,8 +42,8 @@ function NavigationRail() {
                   onClick={() =>
                     setSelectedLabel(isSelected ? null : item.label)
                   }
-                  className={` rounded-[16px] cursor-pointer group hover:bg-purple-100 w-[56px] h-[32px] flex items-center justify-center ${
-                    isSelected && "bg-purple-200"
+                  className={` rounded-[16px] cursor-pointer group hover:bg-indigo-300 w-[56px] h-[32px] flex items-center justify-center ${
+                    isSelected && "bg-indigo-200"
                   }`}
                 >
                   <span

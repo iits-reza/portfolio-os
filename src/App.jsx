@@ -1,4 +1,5 @@
 import "./App.css";
+import ContactInfo from "./components/ContactInfo/ContactInfo";
 import Gallery from "./components/Gallery/Gallery";
 import NavigationRail from "./components/NavigationRail/NavigationRail";
 import Skills from "./components/Skills/Skills";
@@ -12,6 +13,7 @@ function App() {
         <TopHeader />
         <Gallery />
         <Skills />
+        <ContactInfo />
       </div>
     </div>
   );
