@@ -1,15 +1,29 @@
 import { MdOutlinePhone, MdAlternateEmail } from "react-icons/md";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { href, Link } from "react-router-dom";
 
 const infos = [
   {
-    icon: MdAlternateEmail,
-    label: "example@inlook.com",
-    link: "",
-    type: "email",
+    icon: MdOutlinePhone,
+    label: "‪(240) 829-1280‬",
   },
-  { icon: FaLinkedin, label: "me#linkin", link: "" },
-  { icon: FaGithub, label: "github", link: "" },
+  {
+    icon: MdAlternateEmail,
+    label: "rezamoh847@gmail.com",
+    linkSrc: "mailto:rezamoh847@gmail.com",
+  },
+  {
+    icon: FaLinkedin,
+    label: "its-reza",
+    linkSrc: "https://www.linkedin.com/in/its-reza/",
+    target: "_blank",
+  },
+  {
+    icon: FaGithub,
+    label: "iits-reza",
+    linkSrc: "https://github.com/iits-reza/",
+    target: "_blank",
+  },
 ];
 
 function ContactInfo() {
@@ -40,7 +54,7 @@ function ContactInfo() {
 
         {/* Contact Items */}
         <div className="flex flex-col gap-6">
-          <div className="flex items-center gap-4 p-4 rounded-3xl bg-indigo-300">
+          {/* <div className="flex items-center gap-4 p-4 rounded-3xl bg-indigo-300">
             <div
               className="bg-indigo-500 h-12 w-12 grid place-items-center"
               style={{
@@ -55,13 +69,10 @@ function ContactInfo() {
               <MdOutlinePhone size={24} className="text-white" />
             </div>
             <div className="text-white text-lg font-medium">22070978789</div>
-          </div>
-          {infos.map(({ icon: Icon, label }, idx) => (
-            <Link to>
-              <div
-                key={idx}
-                className="flex items-center gap-4 p-4 rounded-3xl bg-indigo-300"
-              >
+          </div> */}
+          {infos.map(({ icon: Icon, label, linkSrc, target }, idx) => (
+            <Link to={linkSrc} key={idx} target={target}>
+              <div className="flex items-center gap-4 p-4 rounded-3xl bg-indigo-300 hover:bg-indigo-400 transition">
                 <div
                   className="bg-indigo-500 h-12 w-12 grid place-items-center"
                   style={{
@@ -77,7 +88,7 @@ function ContactInfo() {
                 </div>
                 <div className="text-white text-lg font-medium">{label}</div>
               </div>
-            </link>
+            </Link>
           ))}
         </div>
       </div>
