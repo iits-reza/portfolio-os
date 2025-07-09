@@ -13,6 +13,9 @@ export default {
   theme: {
     screens: { sm: "375px", md: "768px", lg: "1024px", xl: "1280px" },
     extend: {
+      animation: {
+        "spin-slow": "spin 20s linear infinite",
+      },
       colors: {
         primary: "##E8DEF8",
       },

@@ -1,42 +1,69 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./TopHeader.css";
-import TechIllustration from "/Illustration.png";
-import * as motion from "motion/react-client";
+
+const shapes = [
+  "arch.svg",
+  "sunny.svg",
+  "bun.svg",
+  "pill.svg",
+  "circle.svg",
+  "tewlvesidedcookie.svg",
+  "diamond.svg",
+  "oval.svg",
+  "pixel-circle.svg",
+  "square.svg",
+  "seven-sided-cookie.svg",
+];
+function getRandomColor() {
+  const colors = [
+    "#F87171", // red
+    "#FBBF24", // yellow
+    "#34D399", // green
+    "#60A5FA", // blue
+    "#A78BFA", // purple
+    "#F472B6", // pink
+    "#FCD34D", // amber
+    "#818CF8", // indigo
+    "#2DD4BF", // teal
+    "#FB923C", // orange
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+function getRandomPosition() {
+  const top = Math.floor(Math.random() * 90); // % of parent height
+  const left = Math.floor(Math.random() * 90); // % of parent width
+  return { top: `${top}%`, left: `${left}%` };
+}
 
 function TopHeader() {
+  const [positions, setPositions] = useState([]);
+
+  useEffect(() => {
+    const randomPositions = shapes.map(() => getRandomPosition());
+    setPositions(randomPositions);
+  }, []);
+
   return (
-    <header className="w-full h-screen float-right p-[50px] pl-[100px] flex flex-row gap-[100px] ">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.5,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}
-        className="banner shadow-lg bg-surface w-full relative text-8xl p-9
-      text-white bg-linear-to-r from-indigo-200 to-blue-200 h-[500px]
-      rounded-4xl"
-      >
+    <header className="relative w-full h-screen overflow-hidden flex flex-col justify-center">
+      {shapes.map((shape, idx) => (
         <img
-          src={TechIllustration}
-          className="absolute right-0 top-[50px] w-[600px]"
+          key={idx}
+          src={`./shapes/${shape}`}
+          alt={`shape-${idx}`}
+          className="h-24 w-24 absolute float"
+          style={{
+            top: positions[idx]?.top,
+            left: positions[idx]?.left,
+            animation: "spin 20s linear infinite",
+          }}
         />
-        <div className=" rounded-full flex flex-col gap-4 text-6xl text-black ">
-          <h1 className="text-5xl font-bold text-primary">Hey there</h1>
-          <h2 className="text-4xl font-semibold">I'm John</h2>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <h3 className="text-2xl text-gray-700">
-              A Frontend &lt;Developer/&gt;
-            </h3>
-          </motion.div>
-        </div>
-      </motion.div>
+      ))}
+      <h1 className="text-7xl text-center z-10">
+        I'm Reza a Front end Developer
+      </h1>
     </header>
   );
 }
+
 export default TopHeader;
