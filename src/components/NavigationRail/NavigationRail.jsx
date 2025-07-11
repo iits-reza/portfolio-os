@@ -3,8 +3,6 @@ import "@material/web/button/text-button.js";
 import { MdRipple } from "@material/web/ripple/ripple.js";
 import React, { useEffect, useRef } from "react";
 import "./NavigationRail.css";
-import { Button } from "../Button/Button.jsx";
-import { MdOutlineAddHome, MdOutlineHome } from "react-icons/md";
 
 const navItems = [
   { label: "Home", icon: "home" },
@@ -25,7 +23,10 @@ function NavigationRail() {
   }, []);
 
   return (
-    <nav className="flex flex-col bg-indigo-100 h-screen sticky left-0 top-0 z-50 p-4 w-[100px] float-left">
+    <nav
+      className="flex flex-col bg-indigo-100  top-0 z-50 p-4"
+      style={{ width: 200 }}
+    >
       <div>
         {/* // todo : button anitmation */}
         <div className="flex flex-col align-middle gap-5 mt-8">
@@ -62,7 +63,7 @@ function NavigationRail() {
                   </span>
                 </button>
 
-                <span className="text-sm">{item.label}</span>
+                <span className="text-sm ">{item.label}</span>
               </div>
             );
           })}

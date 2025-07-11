@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./TopHeader.css";
 
 const shapes = [
   "arch.svg",
@@ -31,50 +30,63 @@ const shapes = [
   "seven-sided-cookie.svg",
 ];
 
-function getRandomPosition() {
-  const top = Math.floor(Math.random() * 90);
-  const left = Math.floor(Math.random() * 90);
-  return { top: `${top}%`, left: `${left}%` };
-}
-
 const animations = [
   "animate-spin",
   "animate-ping",
   "animate-pulse",
   "animate-bounce",
 ];
+
+function getRandomPosition() {
+  const top = Math.floor(Math.random() * 90);
+  const left = Math.floor(Math.random() * 90);
+  return { top: `${top}%`, left: `${left}%` };
+}
+
+function getRandomAnimation() {
+  return animations[Math.floor(Math.random() * animations.length)];
+}
+
 function TopHeader() {
-  const [positions, setPositions] = useState([]);
-  const [animation, setAnimation] = useState("");
+  const [shapeData, setShapeData] = useState([]);
 
   useEffect(() => {
-    const randomPositions = shapes.map(() => getRandomPosition());
-    setPositions(randomPositions);
-    const changeAnimation = () => {
-      const random = animations[Math.floor(Math.random() * animations.length)];
-      setAnimation(random);
-    };
-    changeAnimation();
-    const interval = setInterval(changeAnimation, 5000);
-    return () => clearInterval(interval); // cleanup
+    const newShapeData = shapes.map(() => ({
+      position: getRandomPosition(),
+      animation: getRandomAnimation(),
+      size: 40 + Math.random() * 80,
+    }));
+    setShapeData(newShapeData);
+
+    const interval = setInterval(() => {
+      setShapeData((prev) =>
+        prev.map((item) => ({
+          ...item,
+          animation: getRandomAnimation(),
+        }))
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <header className="relative w-full h-screen overflow-hidden flex flex-col justify-center ">
+    <header className="relative w-full h-screen overflow-hidden flex flex-col justify-center">
       {shapes.map((shape, idx) => (
         <img
           key={idx}
           src={`./shapes/${shape}`}
           alt={`shape-${idx}`}
-          className={`absolute  ${animation}`}
+          className={`absolute ${shapeData[idx]?.animation || ""}`}
           style={{
-            top: positions[idx]?.top,
-            left: positions[idx]?.left,
-            width: Math.random() * 120,
-            animationDuration: "3s",
+            top: shapeData[idx]?.position.top,
+            left: shapeData[idx]?.position.left,
+            width: shapeData[idx]?.size || 60,
+            animationDuration: "6s",
           }}
         />
       ))}
+
       <h1 className="text-7xl text-center z-10 text-shadow-white text-shadow-2xs">
         Hey there, I'm Reza
         <div />A Front end Developer
