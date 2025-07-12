@@ -71,7 +71,7 @@ function TopHeader() {
   }, []);
 
   return (
-    <header className="relative w-full h-screen overflow-hidden flex flex-col justify-center">
+    <header className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center">
       {shapes.map((shape, idx) => (
         <img
           key={idx}
@@ -88,7 +88,7 @@ function TopHeader() {
       ))}
 
       <h1 className="text-7xl text-center z-10 text-shadow-white text-shadow-2xs">
-        Hey there, I'm Reza
+        Hey there, I'm John
         <div />A Front end Developer
       </h1>
     </header>

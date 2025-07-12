@@ -55,7 +55,7 @@ const GalleryDetails = [
 function Gallery() {
   return (
     <div className="place-items-center place-content-center h-auto">
-      <div className="w-[80%] grid grid-cols-3 gap-20 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3">
+      <div className="w-[80%] grid grid-cols-3 gap-14 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3">
         {GalleryDetails.map((item, i) => (
           <CardWithInfo key={i} {...item} />
         ))}

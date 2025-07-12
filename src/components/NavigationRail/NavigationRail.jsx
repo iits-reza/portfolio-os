@@ -23,52 +23,38 @@ function NavigationRail() {
   }, []);
 
   return (
-    <nav
-      className="flex flex-col bg-indigo-100  top-0 z-50 p-4"
-      style={{ width: 200 }}
-    >
-      <div>
-        {/* // todo : button anitmation */}
-        <div className="flex flex-col align-middle gap-5 mt-8">
-          {navItems.map((item, index) => {
-            const isSelected = selectedLabel === item.label;
-            return (
-              <div
-                key={item.label}
-                className="flex flex-col items-center gap-1"
+    <nav className=" bg-indigo-100 p-4 h-[100px] rounded-full flex flex-row gap-5 mt-8 justify-self-center ">
+      {/* // todo : button anitmation */}
+      {navItems.map((item, index) => {
+        const isSelected = selectedLabel === item.label;
+        return (
+          <div key={item.label} className="flex flex-col items-center gap-1">
+            <button
+              ref={(el) => (rippleRefs.current[index] = el)}
+              key={item.label}
+              onClick={() => setSelectedLabel(isSelected ? null : item.label)}
+              className={` rounded-[16px] cursor-pointer group hover:bg-indigo-300 w-[56px] h-[32px] flex items-center justify-center ${
+                isSelected && "bg-indigo-200"
+              }`}
+            >
+              <span
+                style={{
+                  fontVariationSettings: `'FILL' ${
+                    isSelected ? 1 : 0
+                  }, 'wght' ${isSelected ? 700 : 700}, 'GRAD' 0, 'opsz' 48`,
+                }}
+                className={
+                  isSelected ? "material-symbols" : "material-symbols-outlined"
+                }
               >
-                <button
-                  ref={(el) => (rippleRefs.current[index] = el)}
-                  key={item.label}
-                  onClick={() =>
-                    setSelectedLabel(isSelected ? null : item.label)
-                  }
-                  className={` rounded-[16px] cursor-pointer group hover:bg-indigo-300 w-[56px] h-[32px] flex items-center justify-center ${
-                    isSelected && "bg-indigo-200"
-                  }`}
-                >
-                  <span
-                    style={{
-                      fontVariationSettings: `'FILL' ${
-                        isSelected ? 1 : 0
-                      }, 'wght' ${isSelected ? 700 : 700}, 'GRAD' 0, 'opsz' 48`,
-                    }}
-                    className={
-                      isSelected
-                        ? "material-symbols"
-                        : "material-symbols-outlined"
-                    }
-                  >
-                    {item.icon}
-                  </span>
-                </button>
+                {item.icon}
+              </span>
+            </button>
 
-                <span className="text-sm ">{item.label}</span>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+            <span className="text-sm">{item.label}</span>
+          </div>
+        );
+      })}
     </nav>
   );
 }
