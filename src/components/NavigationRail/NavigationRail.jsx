@@ -14,8 +14,6 @@ const navItems = [
   // {label:"", icon:"", , }, // template line
 ];
 function NavigationRail() {
-  // const [isSelected, setIsSelected] = React.useState(false);
-  const [darkMode, setDarkMode] = React.useState(false);
   const [selectedLabel, setSelectedLabel] = React.useState(null);
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
   const rippleRefs = useRef([]);
@@ -27,7 +25,10 @@ function NavigationRail() {
   }, []);
 
   return (
-    <nav className=" bg-indigo-100 h-auto">
+    <nav
+      className="  h-auto border-x-[0.1px] border-x-gray-500"
+      style={{ backgroundColor: "var(--nav-bg)" }}
+    >
       {/* // todo : button anitmation */}
       <div className="sticky top-4 left-0 flex flex-col items-center justify-between h-screen">
         <div className="flex flex-col gap-5 ">
@@ -44,9 +45,12 @@ function NavigationRail() {
                   onClick={() =>
                     setSelectedLabel(isSelected ? null : item.label)
                   }
-                  className={` rounded-[16px] cursor-pointer group hover:bg-indigo-300 w-[56px] h-[32px] flex items-center justify-center ${
-                    isSelected && "bg-indigo-200"
+                  className={` rounded-[16px] cursor-pointer group hover:bg-[var(--nav-button-bg-hover)] w-[56px] h-[32px] flex items-center justify-center ${
+                    isSelected && " bg-[var(--nav-button-bg-hover) "
                   }`}
+                  style={{
+                    backgroundColor: "var(--nav-button-)",
+                  }}
                 >
                   <span
                     style={{
@@ -72,7 +76,7 @@ function NavigationRail() {
         <div className="mb-6 group">
           <button
             onClick={toggleTheme}
-            className="h-[50px] w-[50px] border-[0.5px] hover:bg-indigo-200 cursor-pointer justify-items-center rounded-full"
+            className="h-[50px] w-[50px] border-[0.5px] cursor-pointer justify-items-center hover:bg-[var(--theme-toggle-button)] rounded-full"
           >
             {isDarkMode ? (
               <MdOutlineDarkMode size={25} className="" />

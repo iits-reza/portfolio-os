@@ -12,7 +12,13 @@ function AppContent() {
   const { isDarkMode } = useContext(ThemeContext);
 
   return (
-    <div className={isDarkMode ? "dark" : ""}>
+    <div
+      className={isDarkMode ? "dark" : ""}
+      style={{
+        backgroundColor: "var(--background-color)",
+        color: "var(--text-color)",
+      }}
+    >
       <div className="relative flex flex-row">
         <NavigationRail />
         <div className="flex flex-col flex-1">
