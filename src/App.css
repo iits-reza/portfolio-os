@@ -1,1 +1,19 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+/* light-theme.css */
+:root {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  /* ... other light theme variables */
+}
+
+/* dark-theme.css */
+.dark-mode {
+  --background-color: #333333;
+  --text-color: #ffffff;
+  /* ... other dark theme variables */
+}
