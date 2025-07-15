@@ -4,13 +4,14 @@ import "@material/web/button/text-button.js";
 import { MdRipple } from "@material/web/ripple/ripple.js";
 import { ThemeContext } from "../../context/ThemeContext";
 import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
+import { Link } from "react-scroll";
 import "./NavigationRail.css";
 
 const navItems = [
-  { label: "Home", icon: "home" },
-  { label: "Projects", icon: "interests" },
-  { label: "Skills", icon: "code" },
-  { label: "About me", icon: "account_circle" },
+  { label: "Home", icon: "home", href: "#home" },
+  { label: "Projects", icon: "interests", href: "#gallery" },
+  { label: "Skills", icon: "code", href: "#skills" },
+  { label: "About me", icon: "account_circle", href: "#about" },
   // {label:"", icon:"", , }, // template line
 ];
 function NavigationRail() {
@@ -35,41 +36,45 @@ function NavigationRail() {
           {navItems.map((item, index) => {
             const isSelected = selectedLabel === item.label;
             return (
-              <div
-                key={item.label}
-                className="flex flex-col items-center gap-1 w-[100px]"
-              >
-                <button
-                  ref={(el) => (rippleRefs.current[index] = el)}
+              <Link to={item.href} smooth={true} duration={200}>
+                <div
                   key={item.label}
-                  onClick={() =>
-                    setSelectedLabel(isSelected ? null : item.label)
-                  }
-                  className={` rounded-[16px] cursor-pointer group hover:bg-[var(--nav-button-bg-hover)] w-[56px] h-[32px] flex items-center justify-center ${
-                    isSelected && " bg-[var(--nav-button-bg-hover) "
-                  }`}
-                  style={{
-                    backgroundColor: "var(--nav-button-)",
-                  }}
+                  className="flex flex-col items-center gap-1 w-[100px]"
                 >
-                  <span
-                    style={{
-                      fontVariationSettings: `'FILL' ${
-                        isSelected ? 1 : 0
-                      }, 'wght' ${isSelected ? 700 : 700}, 'GRAD' 0, 'opsz' 48`,
-                    }}
-                    className={
-                      isSelected
-                        ? "material-symbols"
-                        : "material-symbols-outlined"
+                  <button
+                    ref={(el) => (rippleRefs.current[index] = el)}
+                    key={item.label}
+                    onClick={() =>
+                      setSelectedLabel(isSelected ? null : item.label)
                     }
+                    className={` rounded-[16px] cursor-pointer group hover:bg-[var(--nav-button-bg-hover)] w-[56px] h-[32px] flex items-center justify-center ${
+                      isSelected && " bg-[var(--nav-button-bg-hover) "
+                    }`}
+                    style={{
+                      backgroundColor: "var(--nav-button-)",
+                    }}
                   >
-                    {item.icon}
-                  </span>
-                </button>
+                    <span
+                      style={{
+                        fontVariationSettings: `'FILL' ${
+                          isSelected ? 1 : 0
+                        }, 'wght' ${
+                          isSelected ? 700 : 700
+                        }, 'GRAD' 0, 'opsz' 48`,
+                      }}
+                      className={
+                        isSelected
+                          ? "material-symbols"
+                          : "material-symbols-outlined"
+                      }
+                    >
+                      {item.icon}
+                    </span>
+                  </button>
 
-                <span className="text-sm">{item.label}</span>
-              </div>
+                  <span className="text-sm">{item.label}</span>
+                </div>
+              </Link>
             );
           })}
         </div>

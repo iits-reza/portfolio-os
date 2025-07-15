@@ -28,7 +28,10 @@ const infos = [
 
 function ContactInfo() {
   return (
-    <div className="min-h-[100dvh] flex justify-center items-center ">
+    <div
+      id="about"
+      className="min-h-[100dvh] flex justify-center items-center "
+    >
       <div className="bg-[var(--card-bg)] p-10 rounded-[3rem] w-[90%] max-w-4xl">
         <div className="relative flex flex-col items-center gap-4 mb-10">
           {/* Avatar + Rotating Shape */}

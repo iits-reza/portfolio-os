@@ -1,3 +1,4 @@
+import { Element } from "react-scroll";
 import { CardItem } from "../CardItem/CardItem";
 import CardWithInfo from "../CardWithInfo/CardWithInfo";
 import img1 from "/gallery/clothes.jpg";
@@ -54,13 +55,18 @@ const GalleryDetails = [
 ];
 function Gallery() {
   return (
-    <div className="place-items-center place-content-center min-h-[100dvh]">
-      <div className="w-[80%] grid grid-cols-3 gap-14 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3">
-        {GalleryDetails.map((item, i) => (
-          <CardWithInfo key={i} {...item} />
-        ))}
+    <Element name="gallery">
+      <div
+        id="gallery"
+        className="place-items-center place-content-center min-h-[100dvh]"
+      >
+        <div className="w-[80%] grid grid-cols-3 gap-14 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3">
+          {GalleryDetails.map((item, i) => (
+            <CardWithInfo key={i} {...item} />
+          ))}
+        </div>
       </div>
-    </div>
+    </Element>
   );
 }
 

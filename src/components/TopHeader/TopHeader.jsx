@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Element } from "react-scroll";
 
 const shapes = [
   "arch.svg",
@@ -71,27 +72,32 @@ function TopHeader() {
   }, []);
 
   return (
-    <header className="relative w-full min-h-[100dvh] overflow-hidden flex flex-col items-center justify-center">
-      {shapes.map((shape, idx) => (
-        <img
-          key={idx}
-          src={`./shapes/${shape}`}
-          alt={`shape-${idx}`}
-          className={`absolute ${shapeData[idx]?.animation || ""}`}
-          style={{
-            top: shapeData[idx]?.position.top,
-            left: shapeData[idx]?.position.left,
-            width: shapeData[idx]?.size || 60,
-            animationDuration: "6s",
-          }}
-        />
-      ))}
+    <Element name="home">
+      <header
+        id="home"
+        className="relative w-full min-h-[100dvh] overflow-hidden flex flex-col items-center justify-center"
+      >
+        {shapes.map((shape, idx) => (
+          <img
+            key={idx}
+            src={`./shapes/${shape}`}
+            alt={`shape-${idx}`}
+            className={`absolute ${shapeData[idx]?.animation || ""}`}
+            style={{
+              top: shapeData[idx]?.position.top,
+              left: shapeData[idx]?.position.left,
+              width: shapeData[idx]?.size || 60,
+              animationDuration: "6s",
+            }}
+          />
+        ))}
 
-      <h1 className="text-7xl text-center z-10 text-shadow-white text-shadow-2xs">
-        Hey there, I'm John
-        <div />A Front end Developer
-      </h1>
-    </header>
+        <h1 className="text-7xl text-center z-10 text-shadow-white text-shadow-2xs">
+          Hey there, I'm John
+          <div />A Front end Developer
+        </h1>
+      </header>
+    </Element>
   );
 }
 
