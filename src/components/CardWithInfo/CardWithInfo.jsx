@@ -2,7 +2,7 @@ import { MdAdd } from "react-icons/md";
 
 export default function CardWithInfo({ imgSrc, title, description }) {
   return (
-    <div className="flex flex-col gap-4 p-[15px] bg-blue-300 rounded-[35px] pb-10">
+    <div className="flex flex-col gap-4 p-[15px] bg-[var(--card-bg)] rounded-[35px] pb-10">
       <img src={imgSrc} className="rounded-[20px]" />
       <h3 className="text-xl font-semibold truncate">{title}</h3>
       <p className="text-sm truncate">{description}</p>

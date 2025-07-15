@@ -28,8 +28,8 @@ const infos = [
 
 function ContactInfo() {
   return (
-    <div className="h-screen flex justify-center items-center bg-white">
-      <div className="bg-indigo-100 p-10 rounded-[3rem] w-[90%] max-w-4xl">
+    <div className="min-h-[100dvh] flex justify-center items-center ">
+      <div className="bg-[var(--card-bg)] p-10 rounded-[3rem] w-[90%] max-w-4xl">
         <div className="relative flex flex-col items-center gap-4 mb-10">
           {/* Avatar + Rotating Shape */}
           <div className="w-36 h-36 relative">
@@ -49,7 +49,7 @@ function ContactInfo() {
               }}
             ></div>
           </div>
-          <h1 className="text-4xl font-bold text-indigo-900">Let's Connect</h1>
+          <h1 className="text-4xl font-bold ">Let's Connect</h1>
         </div>
 
         {/* Contact Items */}
@@ -72,7 +72,7 @@ function ContactInfo() {
           </div> */}
           {infos.map(({ icon: Icon, label, linkSrc, target }, idx) => (
             <Link to={linkSrc} key={idx} target={target}>
-              <div className="flex items-center gap-4 p-4 rounded-3xl bg-indigo-300 hover:bg-indigo-400 transition">
+              <div className="flex items-center gap-4 p-4 rounded-3xl bg-[var(--card-item-bg)] hover:bg-[var(--card-item-bg-hover)] transition">
                 <div
                   className="bg-indigo-500 h-12 w-12 grid place-items-center"
                   style={{
@@ -86,7 +86,7 @@ function ContactInfo() {
                 >
                   <Icon size={24} className="text-white" />
                 </div>
-                <div className="text-white text-lg font-medium">{label}</div>
+                <div className=" text-lg font-medium">{label}</div>
               </div>
             </Link>
           ))}

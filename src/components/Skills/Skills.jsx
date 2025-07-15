@@ -91,7 +91,7 @@ const skills = [
 
 function Skills() {
   return (
-    <div className=" h-screen place-items-center items-center content-center">
+    <div className=" min-h-[100dvh] place-items-center items-center content-center">
       <div className="grid grid-cols-5 gap-4">
         {skills.map(({ skill, icon: Icon, shape, background, color, size }) => (
           <div

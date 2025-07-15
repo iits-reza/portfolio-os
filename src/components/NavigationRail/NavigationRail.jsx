@@ -30,7 +30,7 @@ function NavigationRail() {
       style={{ backgroundColor: "var(--nav-bg)" }}
     >
       {/* // todo : button anitmation */}
-      <div className="sticky top-4 left-0 flex flex-col items-center justify-between h-screen">
+      <div className="sticky top-4 left-0 flex flex-col items-center justify-between min-h-[100dvh]">
         <div className="flex flex-col gap-5 ">
           {navItems.map((item, index) => {
             const isSelected = selectedLabel === item.label;
