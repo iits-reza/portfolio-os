@@ -58,7 +58,7 @@ function Gallery() {
     <Element name="gallery">
       <div
         id="gallery"
-        className="place-items-center place-content-center min-h-[100dvh]"
+        className="place-items-center place-content-center min-h-[100dvh] scroll-mt-[20px]"
       >
         <div className="w-[80%] grid grid-cols-3 gap-14 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3">
           {GalleryDetails.map((item, i) => (

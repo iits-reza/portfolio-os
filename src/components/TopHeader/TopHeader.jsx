@@ -92,8 +92,8 @@ function TopHeader() {
           />
         ))}
 
-        <h1 className="text-7xl text-center z-10 text-shadow-white text-shadow-2xs">
-          Hey there, I'm John
+        <h1 className="text-7xl  leading-24 text-center z-10 text-shadow-white text-shadow-2xs">
+          Hey my friend, I'm Reza
           <div />A Front end Developer
         </h1>
       </header>
