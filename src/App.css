@@ -7,9 +7,9 @@ body {
 :root {
   --background-color: rgb(253 251 255);
   --text-color: #333333;
-  --nav-button-bg-hover: ##c7d2fe;
+  --nav-button-bg-hover: #a1b4ff;
   --nav-bg: #c7d2fe;
-  --theme-toggle-button: #b5c0ed;
+  --theme-toggle-button: #6877b6;
   --card-bg: #c7d2fe;
   --card-item-bg: #aebdf8;
   --card-item-bg-hover: #818cf8;
