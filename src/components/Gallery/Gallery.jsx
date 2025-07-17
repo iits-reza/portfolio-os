@@ -1,56 +1,43 @@
 import { Element } from "react-scroll";
 import { CardItem } from "../CardItem/CardItem";
 import CardWithInfo from "../CardWithInfo/CardWithInfo";
-import img1 from "/gallery/clothes.jpg";
-import img2 from "/gallery/community.jpg";
-import img3 from "/gallery/lab.jpg";
-import img4 from "/gallery/order.jpg";
-import img5 from "/gallery/travel.jpg";
+import clothes from "/gallery/clothes.jpg";
+import community from "/gallery/community.jpg";
+import lab from "/gallery/lab.jpg";
+import gallery from "/gallery/gallery.jpg";
+import travel from "/gallery/travel.jpg";
 const GalleryDetails = [
   {
-    title: "title1",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." +
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-    link: "",
-    imgSrc: img1,
+    title: "Community website",
+    description: "A website for the community to share events and programs",
+    link: "https://community-for-afg.netlify.app/",
+    imgSrc: community,
   },
   {
-    title: "title2",
+    title: "Synthesis workshop",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." +
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-    link: "",
-    imgSrc: img2,
+      "Synthesis workshop is a website for chemistry and science lovers!",
+    link: "https://synthesis-workshop.com/",
+    imgSrc: lab,
   },
   {
-    title: "title3",
+    title: "Around the U.S.",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." +
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-    link: "",
-    imgSrc: img3,
+      "A friendly space were you can share your photos from around the U.S.",
+    link: "https://iits-reza.github.io/se_project_aroundtheus/",
+    imgSrc: gallery,
   },
   {
-    title: "title4",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." +
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-    link: "",
-    imgSrc: img4,
+    title: "Travellian",
+    description: "A website for sharing your favorite places",
+    link: "https://main--amazing-sherbet-d588cc.netlify.app/",
+    imgSrc: travel,
   },
   {
-    title: "title5",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." +
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-    link: "",
-    imgSrc: img5,
+    title: "What to wear",
+    description: "A website that people can share their favorite clothes",
+    link: "https://github.com/iits-reza/se_project_react",
+    imgSrc: clothes,
   },
 ];
 function Gallery() {
