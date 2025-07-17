@@ -1,6 +1,6 @@
 import { MdOutlinePhone, MdAlternateEmail } from "react-icons/md";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { href, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const infos = [
   {

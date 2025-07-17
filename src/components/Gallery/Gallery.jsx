@@ -1,5 +1,4 @@
 import { Element } from "react-scroll";
-import { CardItem } from "../CardItem/CardItem";
 import CardWithInfo from "../CardWithInfo/CardWithInfo";
 import clothes from "/gallery/clothes.jpg";
 import community from "/gallery/community.jpg";
