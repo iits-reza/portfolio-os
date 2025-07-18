@@ -7,7 +7,6 @@ import TopHeader from "./components/TopHeader/TopHeader";
 import { ThemeProvider, ThemeContext } from "./context/ThemeContext";
 import React, { useContext } from "react";
 
-// ✅ Extracted inner app that uses context safely
 function AppContent() {
   const { isDarkMode } = useContext(ThemeContext);
 
@@ -32,7 +31,6 @@ function AppContent() {
   );
 }
 
-// ✅ Main App wraps everything in ThemeProvider
 function App() {
   return (
     <ThemeProvider>
