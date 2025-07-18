@@ -11,7 +11,7 @@ const navItems = [
   { label: "Home", icon: "home", href: "home" },
   { label: "Projects", icon: "interests", href: "gallery" },
   { label: "Skills", icon: "code", href: "skills" },
-  { label: "About me", icon: "account_circle", href: "about" },
+  { label: "Contact", icon: "account_circle", href: "about" },
 ];
 
 function NavigationRail() {
